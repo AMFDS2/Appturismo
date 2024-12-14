@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var clienteController = require('../controllers/clientes.js');
+var clienteController = require('../controls/clientesControl.js');
 
 router.get('/', clienteController.getClientes);
 router.post('/', clienteController.createCliente);

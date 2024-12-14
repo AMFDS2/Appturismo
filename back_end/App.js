@@ -6,13 +6,13 @@ var logger = require('morgan');
 var cors = require('cors');
 
 
-var clientesRouter = require('./router/clientes');
+var clientesRouter = require('./routes/clienteRoute');
 
 
 var app = express();
 
 // CORS
-app.use(cors({origin:'http://localhost:3000'}));
+app.use(cors({origin:'http://localhost:5000'}));
 app.options('*', cors());
 
 app.use(logger('dev'));
