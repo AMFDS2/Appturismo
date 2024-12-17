@@ -19,6 +19,5 @@
   "bin": {
     "back_end": "bin/www.js"
   },
-  "devDependencies": {},
   "description": ""
 }

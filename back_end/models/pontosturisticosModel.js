@@ -9,16 +9,16 @@ mongoose.connect("mongodb+srv://teste:teste@cluster0.ox9eo.mongodb.net/Appturism
 
 var Schema = mongoose.Schema;
 
-const cliente = new Schema ({
+const pontosturisticos = new Schema ({
 
-    cpf        : { type:Number, required: true},
+    id       : { type:Number, required: true},
     nome       : { type:String, required: true},
     cep        : { type:Number },
     telefone   : { type:Number, required: true},
-    email      : { type:String, required: true}
+    localizazao      : { type:String, required: true}
 })
 
-const ClienteModel = mongoose.model('clientes', cliente);
+const PontosturisticosModel = mongoose.model('pontosturisticos', pontosturisticos);
 
 
-module.exports = {ClienteModel}
+module.exports = {PontosturisticosModel}
