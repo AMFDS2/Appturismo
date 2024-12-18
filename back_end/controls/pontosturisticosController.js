@@ -1,9 +1,11 @@
-const Pontosturisticos = require('../models/pontosturisticosModel.js')
+const Pontos = require('../models/pontosturisticosModel.js')
 
 exports.getPontosturisticos = async(req, res) => {
     try {
-        const Pontosturisticos = await Pontosturisticos.PontosturisticosModel.find();
-        res.json(Pontosturisticos)
+        const pontosturisticos = await Pontos.PontosturisticosModel.find();
+        console.log("testando aqui !!!" + pontosturisticos);
+        res.json(pontosturisticos);
+        
         //res.send(Clientes);
     }catch(error) {
         res.status(500).json({ message: error.message });
@@ -13,7 +15,7 @@ exports.getPontosturisticos = async(req, res) => {
 
 exports.getonePontosturisticos = async (req, res) => {   
   try {;
-    res.status(201).json(await Pontosturisticos.PontosturisticosModel.findById(req.params.id));
+    res.status(201).json(await Pontos.PontosturisticosModel.findById(req.params.id));
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
@@ -21,7 +23,7 @@ exports.getonePontosturisticos = async (req, res) => {
 
 exports.createPontosturisticos = async (req, res) => {   
     try {;
-      res.status(201).json(await Pontosturisticos.PontosturisticosModel.create(req.body));
+      res.status(201).json(await Pontos.PontosturisticosModel.create(req.body));
     } catch (error) {
       res.status(400).json({ message: error.message });
     }
@@ -29,7 +31,7 @@ exports.createPontosturisticos = async (req, res) => {
 
   exports.updatePontosturisticos = async (req, res) => {   
     try {;
-      res.status(201).json(await Pontosturisticos.PontosturisticosModel.findByIdAndUpdate(req.params.id,req.body));
+      res.status(201).json(await Pontos.PontosturisticosModel.findByIdAndUpdate(req.params.id,req.body));
     } catch (error) {
       res.status(400).json({ message: error.message });
     }
@@ -37,7 +39,7 @@ exports.createPontosturisticos = async (req, res) => {
 
   exports.deletePontosturisticos = async (req, res) => {   
     try {;
-      res.status(201).json(await Pontosturisticos.PontosturisticosModel.findByIdAndDelete(req.params.id));
+      res.status(201).json(await Pontos.PontosturisticosModel.findByIdAndDelete(req.params.id));
     } catch (error) {
       res.status(400).json({ message: error.message });
     }
@@ -47,13 +49,13 @@ exports.createPontosturisticos = async (req, res) => {
       try {
 
         const cpf = parseInt(req.params.id); // CPF a ser pesquisado
-        const cliente = await Pontosturisticos.PontosturisticosModel.findOne({ cpf: cpf }); // Procura cliente por CPF        
+        const pontosturisticos = await Pontos.PontosturisticosModel.findOne({ cpf: cpf }); // Procura cliente por CPF        
 
-        if (!cliente) {
+        if (!pontosturisticos) {
           return res.status(404).json({ message: "Cliente não encontrado" });
     }
 
-    res.status(200).json(cliente);
+    res.status(200).json(pontosturisticos);
       } catch (error) {
         res.status(400).json({ message: error.message });
       }

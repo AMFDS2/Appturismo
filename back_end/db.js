@@ -12,7 +12,7 @@ console.log("variaveis no db.js: " + MONGO_HOST + " " + MONGO_DATABASE);
 async function connect() {
     if (singleton) return singleton;
  
-        const client = new MongoClient("mongodb+srv://teste:teste@cluster0.sub8t.mongodb.net/");
+        const client = new MongoClient("mongodb+srv://amfds96:teste@cluster0.ox9eo.mongodb.net/");
     
     await client.connect();
  

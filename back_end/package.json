@@ -19,5 +19,9 @@
   "bin": {
     "back_end": "bin/www.js"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@ljharb/tsconfig": "^0.2.2",
+    "typescript": "^5.7.2"
+  }
 }
